@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Millet</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../Millet/img/favicon-16x16.ico"/>
+        <link rel="bookmark" href="../Millet/img/favicon-16x16.ico"/>
+        <!-- Bootstrap -->
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- Millet -->
+        <link href="../Millet/css/millet-base.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="navbar navbar-default navbar-static-top bs-docs-nav" id="top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand"><i class='icon-gift'></i> Millet</a>
+                </div>
+                <nav id="bs-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class='active'>
+                            <a href="index.html">Basic CSS</a>
+                        </li>
+                        <li>
+                            <a href="jsplugins.html">JS Plugins</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-3'>
+                    <nav>
+                        <ul>
+                            <li><a href="#button-part" data-bind="text: HCS.BUTTON_STR"></a></li>
+                            <li><a href="#a-part" data-bind="text: HCS.A_STR"></a></li>
+                            <li><a href="#text-part" data-bind="text: HCS.TEXT_STR"></a></li>
+                            <li><a href="#image-part" data-bind="text: HCS.IMAGE_STR"></a></li>
+                            <li><a href="#table-part" data-bind="text: HCS.TABLE_STR"></a></li>
+                            <li><a href="#form-part" data-bind="text: HCS.FORM_STR"></a></li>
+                            <li><a href="#form-element-part" data-bind="text: HCS.FORM_ELEMENT_STR"></a></li>
+                            <li><a href="#tab-part" data-bind="text: HCS.TAB_STR"></a></li>
+                            <li><a href="#panel-part" data-bind="text: HCS.PANEL_STR"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class='col-md-9'>
+                    <div class='mt-section'>
+                        <h3 id="button-part" data-bind="text: HCS.BUTTON_STR"></h3>
+                        <hr>
+
+                        <div class='mt-div-primary'>
+                            <button class='btn btn-xs btn-default' data-bind='text: HCS.DEFAULT_STR'></button>
+                            <button class='btn mt-xs btn-default' data-bind='text: HCS.DEFAULT_STR'></button> <!-- new size -->
+                            <button class='btn btn-sm btn-default' data-bind='text: HCS.DEFAULT_STR'></button>
+                            <button class='btn btn-default' data-bind='text: HCS.DEFAULT_STR'></button>
+                            <button class='btn btn-lg btn-default' data-bind='text: HCS.DEFAULT_STR'></button>
+                        </div>
+
+                        <!-- button with icon -->
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-default", icon: "icon-cog", label: HCS.DEFAULT_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-primary", icon: "icon-pencil", label: HCS.PRIMARY_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-info", icon: "icon-book", label: HCS.INFO_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-success", icon: "icon-ok", label: HCS.SUCCESS_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-warning", icon: "icon-bell-alt", label: HCS.WARNING_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-danger", icon: "icon-remove", label: HCS.DANGER_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+
+                        <!-- disabled buttons -->
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-default", icon: "icon-cog", label: HCS.DEFAULT_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-primary", icon: "icon-pencil", label: HCS.PRIMARY_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-info", icon: "icon-book", label: HCS.INFO_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-success", icon: "icon-ok", label: HCS.SUCCESS_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-warning", icon: "icon-bell-alt", label: HCS.WARNING_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "btn-danger", icon: "icon-remove", label: HCS.DANGER_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+                        <hr>
+
+                        <!-- new button style 1 -->
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-c-primary btn-sm", icon: "icon-pencil", label: HCS.PRIMARY_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-c-primary btn-sm", icon: "icon-pencil", label: HCS.PRIMARY_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-c-info btn-sm", icon: "icon-book", label: HCS.INFO_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-c-success btn-sm", icon: "icon-ok", label: HCS.SUCCESS_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-c-warning btn-sm", icon: "icon-bell-alt", label: HCS.WARNING_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-c-danger btn-sm", icon: "icon-remove", label: HCS.DANGER_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+
+                        <!-- new button style 2 -->
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-primary btn-sm", icon: "icon-pencil", label: HCS.PRIMARY_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-primary btn-sm", icon: "icon-pencil", label: HCS.PRIMARY_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-info btn-sm", icon: "icon-book", label: HCS.INFO_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-success btn-sm", icon: "icon-ok", label: HCS.SUCCESS_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-warning btn-sm", icon: "icon-bell-alt", label: HCS.WARNING_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-danger btn-sm", icon: "icon-remove", label: HCS.DANGER_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+
+                        <!-- new button style 3 -->
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-primary", icon: "icon-pencil", label: HCS.PRIMARY_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-primary", icon: "icon-pencil", label: HCS.PRIMARY_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-info", icon: "icon-book", label: HCS.INFO_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-success", icon: "icon-ok", label: HCS.SUCCESS_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-warning", icon: "icon-bell-alt", label: HCS.WARNING_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-danger", icon: "icon-remove", label: HCS.DANGER_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-danger", icon: "icon-trash", label: HCS.DANGER_STR, href: HCS.BAIDU_URL }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-danger", icon: "icon-trash", label: HCS.DANGER_STR, href: HCS.BAIDU_URL, newpage: false}
+                            } -->
+                            <!-- /ko -->
+                        </div>
+
+                        <!-- new button style 4 -->
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-primary btn-sm", icon: "icon-pencil", label: HCS.PRIMARY_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-primary btn-sm", icon: "icon-pencil", label: HCS.PRIMARY_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-info btn-sm", icon: "icon-book", label: HCS.INFO_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-success btn-sm", icon: "icon-ok", label: HCS.SUCCESS_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-warning btn-sm", icon: "icon-bell-alt", label: HCS.WARNING_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-outline-danger btn-sm", icon: "icon-remove", label: HCS.DANGER_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+
+                        <!-- new button style 5 -->
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-primary btn-sm", icon: "icon-pencil", label: HCS.PRIMARY_STR, disabled: true, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-primary btn-sm", icon: "icon-pencil", label: HCS.PRIMARY_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-info btn-sm", icon: "icon-book", label: HCS.INFO_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-success btn-sm", icon: "icon-ok", label: HCS.SUCCESS_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-warning btn-sm", icon: "icon-bell-alt", label: HCS.WARNING_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-danger btn-sm", icon: "icon-remove", label: HCS.DANGER_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <i class='icon-spinner icon-spin icon-4x'></i>
+                            <i class='icon-spinner icon-spin icon-3x'></i>
+                            <i class='icon-spinner icon-spin icon-2x'></i>
+                            <i class='icon-spinner icon-spin icon-large'></i>
+                            <i class='icon-spinner icon-spin'></i>
+                        </div>
+                    </div>
+
+                    <div class='mt-section'>
+                        <h3 id="a-part" data-bind="text: HCS.A_STR"></h3>
+                        <hr>
+
+                        <div class='mt-div-primary'>
+                            <a target='_blank' data-bind="text: HCS.BAIDU_STR, attr: {href: HCS.BAIDU_URL}"></a>
+                            <br>
+                            <!-- ko component: {
+                                name: "mt-a",
+                                params: { label: HCS.BAIDU_STR, title: HCS.BAIDU_STR, alt: HCS.BAIDU_STR, href: HCS.BAIDU_URL, icon: "icon-gift" }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+                    </div>
+
+                    <div class='mt-section'>
+                        <h3 id="text-part" data-bind="text: HCS.TEXT_STR"></h3>
+                        <hr>
+
+                        <div class='mt-div-primary'>
+                            <p data-bind="text: HCS.EXAMPLE_P_STRING, css: ''"></p>
+                            <p data-bind="text: HCS.EXAMPLE_P_STRING, css: 'text-muted'"></p>
+                            <p data-bind="text: HCS.EXAMPLE_P_STRING, css: 'text-primary'"></p>
+                            <p data-bind="text: HCS.EXAMPLE_P_STRING, css: 'text-info'"></p>
+                            <p data-bind="text: HCS.EXAMPLE_P_STRING, css: 'text-success'"></p>
+                            <p data-bind="text: HCS.EXAMPLE_P_STRING, css: 'text-warning'"></p>
+                            <p data-bind="text: HCS.EXAMPLE_P_STRING, css: 'text-danger'"></p>
+                        </div>
+                    </div>
+
+                    <div class='mt-section'>
+                        <h3 id="image-part" data-bind="text: HCS.IMAGE_STR"></h3>
+                        <hr>
+
+                        <div class='mt-div-primary'>
+                            <image src='../Millet/img/example-picture-0.png' class='img-rounded' />
+                            <image src='../Millet/img/example-picture-0.png' class='img-circle' />
+                            <image src='../Millet/img/example-picture-0.png' class='img-thumbnail' />
+                        </div>
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-img",
+                                params: { label: HCS.EXAMPLE_PICTURE_LABEL, title: HCS.EXAMPLE_PICTURE_LABEL, alt: HCS.EXAMPLE_PICTURE_LABEL, 
+                                          src: '../Millet/img/example-picture-5.png', css: 'img-rounded', width: '240px' }
+                            } -->
+                            <!-- /ko -->
+
+                            <!-- ko component: {
+                                name: "mt-img",
+                                params: { label: HCS.EXAMPLE_PICTURE_LABEL, title: HCS.EXAMPLE_PICTURE_LABEL, alt: HCS.EXAMPLE_PICTURE_LABEL, 
+                                          src: '../Millet/img/example-picture-5.png', css: 'img-circle', width: '240px' }
+                            } -->
+                            <!-- /ko -->
+
+                            <!-- ko component: {
+                                name: "mt-img",
+                                params: { label: HCS.EXAMPLE_PICTURE_LABEL, title: HCS.EXAMPLE_PICTURE_LABEL, alt: HCS.EXAMPLE_PICTURE_LABEL, 
+                                          src: '../Millet/img/example-picture-5.png', css: 'img-thumbnail', width: '240px' }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+                    </div>
+
+                    <div class='mt-section'>
+                        <h3 id="table-part" data-bind="text: HCS.TABLE_STR"></h3>
+                        <hr>
+
+                        <div class='mt-div-primary'>
+                            <table class='table table-hover table-bordered mt-table-default'>
+                                <thead>
+                                    <tr>
+                                        <th></th><th>First Name</th><th>Last Name</th><th>User Name</th><th>Age</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>No. 3</td><td>Snow</td><td>White</td><td>Miss Princess</td><td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No. 4</td><td>Frank</td><td>Zhang</td><td>Dumpling</td><td>25</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <table class='table table-hover table-bordered mt-table-primary'>
+                                <thead>
+                                    <tr>
+                                        <th></th><th>First Name</th><th>Last Name</th><th>User Name</th><th>Age</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>No. 3</td><td>Snow</td><td>White</td><td>Miss Princess</td><td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No. 4</td><td>Frank</td><td>Zhang</td><td>Dumpling</td><td>25</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <table class='table table-hover table-bordered mt-table-info'>
+                                <thead>
+                                    <tr>
+                                        <th></th><th>First Name</th><th>Last Name</th><th>User Name</th><th>Age</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>No. 3</td><td>Snow</td><td>White</td><td>Miss Princess</td><td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No. 4</td><td>Frank</td><td>Zhang</td><td>Dumpling</td><td>25</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <table class='table table-hover table-bordered mt-table-success'>
+                                <thead>
+                                    <tr>
+                                        <th></th><th>First Name</th><th>Last Name</th><th>User Name</th><th>Age</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>No. 3</td><td>Snow</td><td>White</td><td>Miss Princess</td><td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No. 4</td><td>Frank</td><td>Zhang</td><td>Dumpling</td><td>25</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <table class='table table-hover table-bordered mt-table-warning'>
+                                <thead>
+                                    <tr>
+                                        <th></th><th>First Name</th><th>Last Name</th><th>User Name</th><th>Age</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>No. 3</td><td>Snow</td><td>White</td><td>Miss Princess</td><td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No. 4</td><td>Frank</td><td>Zhang</td><td>Dumpling</td><td>25</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <table class='table table-hover table-bordered mt-table-danger'>
+                                <thead>
+                                    <tr>
+                                        <th></th><th>First Name</th><th>Last Name</th><th>User Name</th><th>Age</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>No. 3</td><td>Snow</td><td>White</td><td>Miss Princess</td><td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No. 4</td><td>Frank</td><td>Zhang</td><td>Dumpling</td><td>25</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class='mt-table-default'>
+                        <table class='table table-hover table-bordered mt-table-default' data-bind="component: {name: 'mt-table', params: {
+                            data: TD.users,
+                            columns: userColumns
+                        }}"></table>
+                    </div>
+
+                    <div class='mt-section'>
+                        <h3 id="form-part" data-bind="text: HCS.FORM_STR"></h3>
+                        <hr>
+
+                        <div class='mt-div-primary'>
+                        </div>
+                    </div>
+
+                    <div class='mt-section'>
+                        <h3 id="form-element-part" data-bind="text: HCS.FORM_ELEMENT_STR"></h3>
+                        <hr>
+
+                        <div class='mt-div-primary'>
+                        </div>
+                    </div>
+
+                    <div class='mt-section'>
+                        <h3 id="tab-part" data-bind="text: HCS.TAB_STR"></h3>
+                        <hr>
+
+                        <div class='mt-div-primary'>
+                        </div>
+                    </div>
+
+                    <div class='mt-section'>
+                        <h3 id="panel-part" data-bind="text: HCS.PANEL_STR"></h3>
+                        <hr>
+
+                        <div class='mt-div-primary'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+        </footer>
+
+        <script data-main="js/index" src="../require/require-2.1.19.js"></script>
+    </body>
+</html>
