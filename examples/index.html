@@ -593,11 +593,6 @@
                         <hr>
 
                         <div class='mt-div-primary'>
-                            <input type="text" class="form-control" placeholder="Text input">
-                        </div>
-                        <hr>
-
-                        <div class='mt-div-primary'>
                             <form class='form-horizontal mt-form'>
                                 <div class='form-group' data-bind="component: {name: 'mt-input', params: {
                                     id: 'userName',
@@ -620,6 +615,55 @@
                                     type: 'password',
                                     placeholder: HCS.PASSWORD_LABEL,
                                     label: HCS.PASSWORD_LABEL
+                                }}"></div>
+                                <div class='form-group' data-bind="component: {name: 'mt-textarea', params: {
+                                    id: 'description',
+                                    data: description,
+                                    placeholder: HCS.DESCRIPTION_LABEL,
+                                    label: HCS.DESCRIPTION_LABEL
+                                }}"></div>
+                                <div class='form-group' data-bind="component: {name: 'mt-input', params: {
+                                    id: 'datetime',
+                                    data: datetime,
+                                    type: 'datetime-local',
+                                    placeholder: HCS.DATETIME_LABEL,
+                                    label: HCS.DATETIME_LABEL
+                                }}"></div>
+                                <div class='form-group' data-bind="component: {name: 'mt-checkbox', params: {
+                                    prefix: 'hobby',
+                                    data: hobbyList,
+                                    placeholder: HCS.HOBBIES_LABEL,
+                                    label: HCS.HOBBIES_LABEL,
+                                    type: 'checkbox'
+                                }}"></div>
+                                <div class='form-group' data-bind="component: {name: 'mt-checkbox', params: {
+                                    prefix: 'grade',
+                                    data: gradeList,
+                                    placeholder: HCS.GRADE_LABEL,
+                                    label: HCS.GRADE_LABEL,
+                                    type: 'radio'
+                                }}"></div>
+                                <div class='form-group' data-bind="component: {name: 'mt-checkbox', params: {
+                                    prefix: 'hobby1',
+                                    data: hobbyList1,
+                                    placeholder: HCS.HOBBIES_LABEL,
+                                    label: HCS.HOBBIES_LABEL,
+                                    type: 'checkbox',
+                                    isInline: false
+                                }}"></div>
+                                <div class='form-group' data-bind="component: {name: 'mt-checkbox', params: {
+                                    prefix: 'grade1',
+                                    data: gradeList1,
+                                    placeholder: HCS.GRADE_LABEL,
+                                    label: HCS.GRADE_LABEL,
+                                    type: 'radio',
+                                    isInline: false
+                                }}"></div>
+                                <div class='form-group' data-bind="component: {name: 'mt-select', params: {
+                                    id: 'country',
+                                    data: country,
+                                    label: HCS.COUNTRY_LABEL,
+                                    options: countryOptions
                                 }}"></div>
                             </form>
                         </div>
