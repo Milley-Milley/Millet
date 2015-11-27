@@ -11,20 +11,33 @@ define([], function(){
 		IMAGE_STR: "Image",
 		TAB_STR: "Tab",
 		PANEL_STR: "Panel",
-
+		// button part
 		DEFAULT_STR: "Default",
 		PRIMARY_STR: "Primary",
 		INFO_STR: "Info",
 		SUCCESS_STR: "Success",
 		WARNING_STR: "Warning",
 		DANGER_STR: "Danger",
-
+		// a part
 		BAIDU_STR: "Baidu",
 		BAIDU_URL: "http://www.baidu.com",
-
+		// text part
 		EXAMPLE_P_STRING: "This is a paragragh example. You can choose different css class to show the text.",
-
+		// image part
 		EXAMPLE_PICTURE_LABEL: "Example Picture",
+		// table part
+		ID_STR: "ID",
+		FIRST_NAME_STR: "First Name",
+		LAST_NAME_STR: "Last Name",
+		USER_NAME_STR: "User Name",
+		AGE_STR: "Age",
+		USER_LIST_1: "User List 1",
+		USER_LIST_2: "User List 2",
+		USER_LIST_3: "User List 3",
+		// form element
+		USERNAME_LABEL: "User Name",
+		EMAIL_LABEL: "Email",
+		PASSWORD_LABEL: "Password",
 
 
 		// jsplugins.html HCS

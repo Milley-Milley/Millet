@@ -26,20 +26,36 @@ requirejs.config({
 
 require(["jquery", "bootstrap", "knockout", "millet", "HCS", "tableData"], function($, bs, ko, mt, hcs, td){
 	var mainJS = function(){
+		var self = this;
 		this.HCS = hcs;
 		this.TD = td;
-		
+
 		this.clickEvent = function(){
 			console.log("click: " + (new Date()).toString());
 		};
 
+		this.exampleTableData = ko.observableArray(self.TD.users1);
+		this.changeExampleData1 = function(){
+			self.exampleTableData(self.TD.users1);
+		};
+		this.changeExampleData2 = function(){
+			self.exampleTableData(self.TD.users2);
+		};
+		this.changeExampleData3 = function(){
+			self.exampleTableData(self.TD.users3);
+		};
+
 		this.userColumns = [{
-			header
-		}, {
-
-		}, {
-
+			id: 'id', header: self.HCS.ID_STR }, {
+			id: 'firstName', header: self.HCS.FIRST_NAME_STR }, {
+			id: 'lastName', header: self.HCS.LAST_NAME_STR }, {
+			id: 'userName', header: self.HCS.USER_NAME_STR, style: "text-align: right; color: #aaa;" }, {
+			id: 'age', header: self.HCS.AGE_STR
 		}];
+
+		this.userName = ko.observable('Milley Shu');
+		this.email = ko.observable('');
+		this.password = ko.observable('');
 	};
 
 	ko.applyBindings(new mainJS());

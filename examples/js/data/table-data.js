@@ -1,6 +1,6 @@
 define([], function(){
-	var data = function(){
-		this.students = [{
+	var data = {
+		students: [{
 			depart: "7", id: "s-001", name: "s-aaa", grade: 1, age: 20, gender: 1, hobby: "Singing, Dancing, Travelling, Shopping"},{
 			depart: "1", id: "s-002", name: "s-bbb", grade: 2, age: 21, gender: 2, hobby: "-- singing, dancing, travelling, shopping --"},{
 			depart: "2", id: "s-003", name: "s-ccc", grade: 3, age: 23, gender: 2, hobby: "Singing, Dancing, Travelling, Shopping"},{
@@ -56,9 +56,9 @@ define([], function(){
 			depart: "1", id: "s-053", name: "s-zz1", grade: 4, age: 23, gender: 1, hobby: "Playing Sports, plaing the piano"},{
 			depart: "5", id: "s-054", name: "s-aa2", grade: 4, age: 22, gender: 2, hobby: "Singing, Dancing, Travelling, Shopping"},{
 			depart: "1", id: "s-055", name: "s-aa3", grade: 1, age: 21, gender: 2, hobby: "Singing, Dancing, Travelling, Shopping"
-		}];
+		}],
 
-		this.teachers = [{
+		teachers: [{
 			id: "tt-001", name: "tt-aaa", grade: 1, age: 30, gender: 1 },{
 			id: "tt-002", name: "tt-bbb", grade: 2, age: 31, gender: 2 },{
 			id: "tt-003", name: "tt-ccc", grade: 3, age: 33, gender: 2 },{
@@ -113,9 +113,9 @@ define([], function(){
 			id: "tt-053", name: "tt-zz1", grade: 4, age: 33, gender: 1 },{
 			id: "tt-054", name: "tt-aa2", grade: 4, age: 32, gender: 2 },{
 			id: "tt-055", name: "tt-aa3", grade: 1, age: 31, gender: 2
-		}];
+		}],
 
-		this.workers = [{
+		workers: [{
 			id: "www-001", name: "www-aaa", workYear: 1, age: 50, gender: 1 },{
 			id: "www-002", name: "www-bbb", workYear: 2, age: 51, gender: 2 },{
 			id: "www-003", name: "www-ccc", workYear: 3, age: 53, gender: 2 },{
@@ -170,15 +170,21 @@ define([], function(){
 			id: "www-053", name: "www-zz1", workYear: 4, age: 53, gender: 1 },{
 			id: "www-054", name: "www-aa2", workYear: 4, age: 52, gender: 2 },{
 			id: "www-055", name: "www-aa3", workYear: 1, age: 51, gender: 2
-		}];
+		}],
 
-		this.users = [{
+		users1: [{
 			id: "No. 1", firstName: "Milley", lastName: "Shu", userName: "Milley-Milley", age: 23 },{
 			id: "No. 2", firstName: "June", lastName: "Smith", userName: "JungleS", age: 22 },{
 			id: "No. 3", firstName: "Frank", lastName: "Zhang", userName: "Dumpling", age: 25 },{
 			id: "No. 4", firstName: "Snow", lastName: "White", userName: "Miss Princess", age: 19 },{
 			id: "No. 5", firstName: "Amy", lastName: "Swift", userName: "Amy Like Jumping", age: 24
-		}];
+		}],
+		users2: [{
+			id: "No. 1", firstName: "Milley", lastName: "Shu", userName: "Milley-Milley", age: 23 },{
+			id: "No. 2", firstName: "June", lastName: "Smith", userName: "JungleS", age: 22 },{
+			id: "No. 3", firstName: "Frank", lastName: "Zhang", userName: "Dumpling", age: 25 
+		}],
+		users3: [],
 	};
 
 	return data;

@@ -1,6 +1,7 @@
 requirejs.config({
+	baseUrl: "../",
 	paths: {
-		"milletHCS": "hcs",
+		"milletHCS": "Millet/js/millet-hcs",
 	}
 });
 
@@ -54,25 +55,66 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 		template: "<image data-bind='attr: {src: src, title: title, alt: alt}, css: css, style: {width: width, height: height}' />"
 	});
 
-	// 每个column都需要规定 header style dataType(number/string)
 	ko.components.register("mt-table", {
 		viewModel: function(params){
-			this.data = params.data ? prams.data : [];
+			this.data = params.data ? params.data : [];
 			this.columns = params.columns ? params.columns : [];
 			this.colNum = this.columns.length;
+			for(var i=0; i<this.colNum; i++){
+				this.columns[i].style = this.columns[i].style ? this.columns[i].style : "";
+			}
 			this.loadingMessage = params.loadingMessage ? params.loadingMessage : hcs.LOADING_STR;
 			this.emptyMessage = params.emptyMessage ? params.emptyMessage : hcs.NO_DATA_STR;
 		},
 		template: 
             "<thead>"
                 +"<tr data-bind='foreach: columns'>"
-					+"<th data-bind="text: label"></th>"
+					+"<th data-bind='text: header, attr: {style: style}'></th>"
                 +"</tr>"
             +"</thead>"
-            +"<tbody>"
-                +"<tr>"
-                    <td>No. 3</td><td>Snow</td><td>White</td><td>Miss Princess</td><td>21</td>
+
+			+"<!-- ko if: data && data.length > 0 -->"
+            +"<tbody data-bind='foreach: data'>"
+                +"<tr data-bind='foreach: $parent.columns'>"
+                    +"<td data-bind='text: $parent[$data.id], attr: {style: $data.style}'></td>"
                 +"</tr>"
             +"</tbody>"
+            +"<!-- /ko -->"
+
+            +"<!-- ko if: !data || data.length === 0 -->"
+            +"<tbody><tr><td data-bind='text: emptyMessage, attr: {colspan: colNum}' style='text-align: center;'></td></tr></tbody>"
+            +"<!-- /ko -->"
 	});
+
+	// support [type='text'] [type='email'] [type='password']
+	ko.components.register("mt-input", {
+		viewModel: function(params){
+			this.id = params.id ? params.id : "";
+			this.data = params.data ? params.data : undefined;
+			this.type = params.type ? params.type : "input";
+			this.placeholder = params.placeholder ? params.placeholder : "";
+			this.label = params.label ? params.label : "";
+			this.labelClass = params.labelClass ? params.labelClass : "col-sm-2";
+			this.mainClass = params.mainClass ? params.mainClass : "col-sm-10";
+			this.showLabel = (params.showLabel === true || params.showLabel === false) ? params.showLabel : true;
+			this.disabled = (params.disabled === true || params.disabled === false) ? params.disabled : false;
+		},
+		template: 
+			"<!-- ko if: showLabel -->"
+            +"<label class='control-label' data-bind='text: label, css: labelClass, attr: {for: id}'></label>"
+            +"<!-- /ko -->"
+            +"<div data-bind='css: mainClass'>"
+                +"<input class='form-control' data-bind='textInput: data, attr: {type: type, id: id, placeholder: placeholder, disabled: disabled}'>"
+            +"</div>"
+	});
+
+	// textarea
+
+	// checkbox group
+
+	// radio group
+
+	// select
+
+	//
 });

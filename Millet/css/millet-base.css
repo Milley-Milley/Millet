@@ -137,8 +137,8 @@ ul li{
 }
 .btn.mt-outline-primary:hover, .btn.mt-icon-primary:hover,
 .btn.mt-outline-c-primary, .btn.mt-icon-c-primary {
-	color: #77A0C4;
-	border-color: #77A0C4;
+	color: #72A1CA;
+	border-color: #72A1CA;
 }
 .btn.mt-outline-primary:active, .btn.mt-icon-primary:active,
 .btn.mt-outline-c-primary:hover, .btn.mt-icon-c-primary:hover {
@@ -305,6 +305,9 @@ ul li{
 
 
 /* ********** FORM ELEMENT BEGIN ************************************************ */
+form.mt-form .form-group{
+	margin-bottom: 10px;
+}
 /* ********** FORM ELEMENT END ************************************************** */
 
 
