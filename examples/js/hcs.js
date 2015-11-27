@@ -38,7 +38,31 @@ define([], function(){
 		USERNAME_LABEL: "User Name",
 		EMAIL_LABEL: "Email",
 		PASSWORD_LABEL: "Password",
+		DESCRIPTION_LABEL: "Description",
+		DATETIME_LABEL: "Date Time",
 
+		SINGING_LABEL: "Singing",
+		DANCING_LABEL: "Dancing",
+		SPORTS_LABEL: "Playing Sports",
+		SHOPPING_LABEL: "Shopping",
+		CLIMBING_LABEL: "Climbing",
+		PAINGTING_LABEL: "Painting",
+		EATING_LABEL: "Eating",
+		READING_LABEL: "Reading",
+		HOBBIES_LABEL: "Hobbies",
+
+		GRADE_ONE_LABEL: "Grade One",
+		GRADE_TWO_LABEL: "Grade Two",
+		GRADE_THREE_LABEL: "Grade Three",
+		GRADE_FOUR_LABEL: "Grade Four",
+		GRADE_LABEL: "Grade",
+
+		COUNTRY_LABEL: "Country",
+		CHINA_LABEL: "China",
+		JAPAN_LABEL: "Japan",
+		AMERICA_LABEL: "America",
+		CANADA_LABEL: "Canada",
+		INDIA_LABEL: "India",
 
 		// jsplugins.html HCS
 		DATE_TIME_PICKER_STR: "Datetime-picker",
