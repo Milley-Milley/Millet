@@ -125,6 +125,30 @@ require(["jquery", "bootstrap", "knockout", "millet", "HCS", "tableData"], funct
 			desc: self.HCS.CANADA_LABEL, value: '4' },{
 			desc: self.HCS.INDIA_LABEL, value: '5' 
 		}];
+
+		self.tabs = [{
+			name: self.HCS.STUDENT_TAB_LABEL, id: 'student-tab', bodyId: 'student-tab-body' },{
+			name: self.HCS.TEACHER_TAB_LABEL, id: 'teacher-tab', bodyId: 'teacher-tab-body' },{
+			name: self.HCS.WORKER_TAB_LABEL, id: 'worker-tab', bodyId: 'worker-tab-body'
+		}];
+
+		self.tabs1 = [{
+			name: self.HCS.STUDENT_TAB_LABEL, id: 'student-tab-1', bodyId: 'student-tab-body-1' },{
+			name: self.HCS.TEACHER_TAB_LABEL, id: 'teacher-tab-1', bodyId: 'teacher-tab-body-1' },{
+			name: self.HCS.WORKER_TAB_LABEL, id: 'worker-tab-1', bodyId: 'worker-tab-body-1'
+		}];
+
+		self.tabs2 = [{
+			name: self.HCS.STUDENT_TAB_LABEL, id: 'student-tab-2', bodyId: 'student-tab-body-2' },{
+			name: self.HCS.TEACHER_TAB_LABEL, id: 'teacher-tab-2', bodyId: 'teacher-tab-body-2' },{
+			name: self.HCS.WORKER_TAB_LABEL, id: 'worker-tab-2', bodyId: 'worker-tab-body-2'
+		}];
+
+		self.tabs3 = [{
+			name: self.HCS.STUDENT_TAB_LABEL, id: 'student-tab-3', bodyId: 'student-tab-body-3' },{
+			name: self.HCS.TEACHER_TAB_LABEL, id: 'teacher-tab-3', bodyId: 'teacher-tab-body-3' },{
+			name: self.HCS.WORKER_TAB_LABEL, id: 'worker-tab-3', bodyId: 'worker-tab-body-3'
+		}];
 	};
 
 	ko.applyBindings(new mainJS());

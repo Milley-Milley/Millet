@@ -304,7 +304,7 @@ ul li{
 /* ********** TABLE END ********************************************************* */
 
 
-/* ********** FORM ELEMENT BEGIN ************************************************ */
+/* ********** FORM BEGIN ******************************************************** */
 form.mt-form .form-group{
 	margin-bottom: 10px;
 }
@@ -314,18 +314,47 @@ form.mt-form .form-group{
 .mt-checkbox-inline, .mt-radio-inline{
 	margin-right: 25px;
 }
-/* ********** FORM ELEMENT END ************************************************** */
-
-
-/* ********** FORM BEGIN ******************************************************** */
 /* ********** FORM END ********************************************************** */
 
 
-/* ********** IMG BEGIN ********************************************************* */
-/* ********** IMG END *********************************************************** */
-
-
 /* ********** TAB BEGIN ********************************************************* */
+.mt-tabs > .mt-tab{
+	border: 0;
+	border-bottom: 1px solid #ddd;
+	padding: 8px 15px;
+	background-color: #fff;
+}
+.mt-tabs > .mt-tab:hover{
+	cursor: pointer;
+	color: #0572CE;
+	text-decoration: underline;
+}
+.mt-tabs > .mt-tab.mt-active{
+	border: 1px solid #ddd;
+	border-top: 3px solid #0572CE;
+	border-bottom: 1px solid #fff;
+	color: #0572CE;
+}
+.mt-tab-bodys .mt-tab-body{
+	border: 1px solid #ddd;
+	margin-top: 6px;
+	padding: 15px;
+	display: none;
+}
+.mt-tab-bodys .mt-tab-body.mt-active{
+	display: block;
+}
+
+.nav-tabs{
+	border-radius: 0 0 4px 4px;
+}
+.nav.nav-tabs + .mt-tab-bodys > .mt-tab-body{
+	margin-top: -1px;
+	border-radius: 4px;
+}
+.nav.nav-tabs + .mt-tab-bodys > .mt-tab-body:first-child{
+	border-top-left-radius: 0;
+}
 /* ********** TAB END *********************************************************** */
 
 

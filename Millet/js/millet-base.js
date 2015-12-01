@@ -7,7 +7,12 @@ requirejs.config({
 
 define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 
-
+	ko.components.register("mt", {
+		viewModel: function(params){
+			this.tmpl = params.tmpl ? $(params.tmpl).html() : "";
+		},
+		template: this.tmpl
+	});
 
 	ko.components.register("mt-icon-btn", {
 		viewModel: function(params){
@@ -206,5 +211,50 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 					+"<option data-bind='value: value, text: desc'></option>"
 				+"</select>"
             +"</div>"
+	});
+
+	ko.components.register("mt-tab", {
+		viewModel: function(params){
+			var self = this;
+			this.tabs = params.tabs ? params.tabs : [];
+			this.style = params.style ? params.style : "";
+			this.type = params.type ? params.type : "nav-tabs";  // 1. ""  2. tab  3. pill  4. jet
+			var allFalse = true;
+			for(var i=0; i<this.tabs.length; i++){
+				if(this.tabs[i].active === true ){
+					this.tabs[i].active = ko.observable(true);
+					$(this.tabs[i].bodyId).addClass('mt-active');
+				} else {
+					this.tabs[i].active = ko.observable(false);
+				}
+				if(this.tabs[i].active === true){
+					allFalse = false;
+				}
+			}
+			if(allFalse && this.tabs.length > 0){
+				this.tabs[0].active(true);
+				$("#"+ this.tabs[0].bodyId).addClass('mt-active');
+			}
+
+			this.switchEvent = params.switchEvent ? params.switchEvent : function(data, event){
+				for(var i=0; i<self.tabs.length; i++){
+					self.tabs[i].active(false);
+					$("#"+ self.tabs[i].bodyId).removeClass('mt-active');
+				}
+				data.active(true);
+				$("#"+ data.bodyId).addClass('mt-active');
+			};
+		},
+		template:
+			"<!-- ko if: type === 'jet' -->"
+			+"<div class='mt-tabs' data-bind='foreach: tabs'>"
+				+"<a class='mt-tab' data-bind='text: name, click: $parent.switchEvent, attr: {id: id, style: $parent.style}, css: active() ? \"mt-active\" : \"\" '></a>"
+			+"</div>"
+			+"<!-- /ko -->"
+			+"<!-- ko if: type !== 'jet' -->"
+			+"<ul class='nav' data-bind='css: type, foreach: tabs'>"
+				+"<li role='presentation' data-bind='css: active() ? \"active\" : \"\" ' '><a data-bind='text: name, click: $parent.switchEvent, attr: {id: id, style: $parent.style}'></a></li>"
+			+"</ul>"
+			+"<!-- /ko -->"
 	});
 });
