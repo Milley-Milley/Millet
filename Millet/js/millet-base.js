@@ -7,17 +7,6 @@ requirejs.config({
 
 define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 
-<<<<<<< HEAD
-
-=======
-	ko.components.register("mt", {
-		viewModel: function(params){
-			this.tmpl = params.tmpl ? $(params.tmpl).html() : "";
-		},
-		template: this.tmpl
-	});
->>>>>>> master
-
 	ko.components.register("mt-icon-btn", {
 		viewModel: function(params){
 			this.type = params.type ? params.type : 'btn-default';
