@@ -64,6 +64,11 @@ define([], function(){
 		CANADA_LABEL: "Canada",
 		INDIA_LABEL: "India",
 
+		//TAB
+		STUDENT_TAB_LABEL: "Student",
+		TEACHER_TAB_LABEL: "Teacher",
+		WORKER_TAB_LABEL: "Worker",
+
 		// jsplugins.html HCS
 		DATE_TIME_PICKER_STR: "Datetime-picker",
 		MODAL_STR: "Modal",
