@@ -69,6 +69,14 @@ define([], function(){
 		TEACHER_TAB_LABEL: "Teacher",
 		WORKER_TAB_LABEL: "Worker",
 
+		//PANEL
+		DEFAULT_PANEL_HEADING: "Default Panel Heading",
+		PRIMARY_PANEL_HEADING: "Primary Panel Heading",
+		INFO_PANEL_HEADING: "Info Panel Heading",
+		SUCCESS_PANEL_HEADING: "Success Panel Heading",
+		WARNING_PANEL_HEADING: "Warning Panel Heading",
+		DANGER_PANEL_HEADING: "Danger Panel Heading",
+
 		// jsplugins.html HCS
 		DATE_TIME_PICKER_STR: "Datetime-picker",
 		MODAL_STR: "Modal",
@@ -85,7 +93,11 @@ define([], function(){
 		CAROUSEL_STR: "Carousel",
 		SWITCH_STR: "Switch ( replace radio )",
 		DRAGDROP_STR: "Drag drop ( search condition / checkbox )",
-		SCROLL_LISTENER: "Scroll Listener",
+		SCROLLSPY_STR: "Scrollspy",
+		FORM_VALIDATION_STR: "Form Validation",
+		PROGRESS_BAR_STR: "Progress Bar",
+		LOADING_STR: "Loading",
+		GO_TO_TOP: "TOP",
 	};
 
 	return milletHCS;

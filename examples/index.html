@@ -211,6 +211,40 @@
                             <!-- /ko -->
                         </div>
 
+                        <!-- new button style 2-2 -->
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-primary btn-sm mt-no-border", icon: "icon-pencil", label: HCS.PRIMARY_STR, disabled: true, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-primary btn-sm mt-no-border", icon: "icon-pencil", label: HCS.PRIMARY_STR, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-info btn-sm mt-no-border", icon: "icon-book", label: HCS.INFO_STR, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-success btn-sm mt-no-border", icon: "icon-ok", label: HCS.SUCCESS_STR, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-warning btn-sm mt-no-border", icon: "icon-bell-alt", label: HCS.WARNING_STR, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-c-danger btn-sm mt-no-border", icon: "icon-remove", label: HCS.DANGER_STR, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+
                         <!-- new button style 3 -->
                         <div class='mt-div-primary'>
                             <!-- ko component: {
@@ -246,7 +280,7 @@
 
                             <!-- ko component: {
                                 name: "mt-icon-btn",
-                                params: { type: "mt-danger", icon: "icon-trash", label: HCS.DANGER_STR, href: HCS.BAIDU_URL }
+                                params: { type: "mt-danger", icon: "icon-trash", label: HCS.DANGER_STR, href: "", clickEvent: clickEvent }
                             } -->
                             <!-- /ko -->
                             <!-- ko component: {
@@ -320,6 +354,40 @@
                             <!-- ko component: {
                                 name: "mt-icon-btn",
                                 params: { type: "mt-icon-danger btn-sm", icon: "icon-remove", label: HCS.DANGER_STR, clickEvent: clickEvent }
+                            } -->
+                            <!-- /ko -->
+                        </div>
+
+                        <!-- new button style 5-2 -->
+                        <div class='mt-div-primary'>
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-primary btn-sm mt-no-border", icon: "icon-pencil", label: HCS.PRIMARY_STR, disabled: true, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-primary btn-sm mt-no-border", icon: "icon-pencil", label: HCS.PRIMARY_STR, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-info btn-sm mt-no-border", icon: "icon-book", label: HCS.INFO_STR, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-success btn-sm mt-no-border", icon: "icon-ok", label: HCS.SUCCESS_STR, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-warning btn-sm mt-no-border", icon: "icon-bell-alt", label: HCS.WARNING_STR, clickEvent: clickEvent, href: '' }
+                            } -->
+                            <!-- /ko -->
+                            <!-- ko component: {
+                                name: "mt-icon-btn",
+                                params: { type: "mt-icon-danger btn-sm mt-no-border", icon: "icon-remove", label: HCS.DANGER_STR, clickEvent: clickEvent, href: '' }
                             } -->
                             <!-- /ko -->
                         </div>
@@ -720,23 +788,26 @@
                         <hr>
 
                         <div class='mt-div-primary'>
-                            <!-- ko component: {
-                                name: 'mt-tab', 
-                                params: {tabs: tabs2, type: 'nav-pills nav-stacked'}
-                            } -->
-                            <!-- /ko -->
-                            <div class='mt-tab-bodys'>
-                                <div class='mt-tab-body' id='student-tab-body-2'>
-                                    <p data-bind="text: HCS.STUDENT_TAB_LABEL, css: 'text-info'"></p>
-                                    <mt-icon-btn params="type: 'mt-icon-info btn-sm', icon: 'icon-pencil', label: HCS.INFO_STR, clickEvent: clickEvent"></mt-icon-btn>
-                                </div>
-                                <div class='mt-tab-body' id='teacher-tab-body-2'>
-                                    <p data-bind="text: HCS.TEACHER_TAB_LABEL, css: 'text-success'"></p>
-                                    <mt-icon-btn params="type: 'mt-icon-success btn-sm', icon: 'icon-ok', label: HCS.SUCCESS_STR, clickEvent: clickEvent"></mt-icon-btn>
-                                </div>
-                                <div class='mt-tab-body' id='worker-tab-body-2'>
-                                    <p data-bind="text: HCS.WORKER_TAB_LABEL, css: 'text-warning'"></p>
-                                    <mt-icon-btn params="type: 'mt-icon-warning btn-sm', icon: 'icon-trash', label: HCS.WARNING_STR, clickEvent: clickEvent"></mt-icon-btn>
+                            <div class='row'>
+                                <div class='col-md-3' data-bind="component: {name: 'mt-tab', params: {
+                                    tabs: tabs2, 
+                                    type: 'nav-pills nav-stacked'
+                                }}"></div>
+                                <div class='col-md-9'>
+                                    <div class='mt-tab-bodys'>
+                                        <div class='mt-tab-body' id='student-tab-body-2'>
+                                            <p data-bind="text: HCS.STUDENT_TAB_LABEL, css: 'text-info'"></p>
+                                            <mt-icon-btn params="type: 'mt-icon-info btn-sm', icon: 'icon-pencil', label: HCS.INFO_STR, clickEvent: clickEvent"></mt-icon-btn>
+                                        </div>
+                                        <div class='mt-tab-body' id='teacher-tab-body-2'>
+                                            <p data-bind="text: HCS.TEACHER_TAB_LABEL, css: 'text-success'"></p>
+                                            <mt-icon-btn params="type: 'mt-icon-success btn-sm', icon: 'icon-ok', label: HCS.SUCCESS_STR, clickEvent: clickEvent"></mt-icon-btn>
+                                        </div>
+                                        <div class='mt-tab-body' id='worker-tab-body-2'>
+                                            <p data-bind="text: HCS.WORKER_TAB_LABEL, css: 'text-warning'"></p>
+                                            <mt-icon-btn params="type: 'mt-icon-warning btn-sm', icon: 'icon-trash', label: HCS.WARNING_STR, clickEvent: clickEvent"></mt-icon-btn>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -770,6 +841,58 @@
                         <hr>
 
                         <div class='mt-div-primary'>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" data-bind='text: HCS.DEFAULT_PANEL_HEADING'></div>
+                                <div class="panel-body">
+                                    Panel content
+                                </div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading" data-bind='text: HCS.PRIMARY_PANEL_HEADING'></div>
+                                <div class="panel-body">
+                                    Panel content
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <div class="panel panel-info">
+                                <div class="panel-heading" data-bind='text: HCS.INFO_PANEL_HEADING'></div>
+                                <div class="panel-body">
+                                    Panel content
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <div class="panel panel-success">
+                                <div class="panel-heading" data-bind='text: HCS.SUCCESS_PANEL_HEADING'></div>
+                                <div class="panel-body">
+                                    Panel content
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <div class="panel panel-warning">
+                                <div class="panel-heading" data-bind='text: HCS.WARNING_PANEL_HEADING'></div>
+                                <div class="panel-body">
+                                    Panel content
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='mt-div-primary'>
+                            <div class="panel panel-danger">
+                                <div class="panel-heading" data-bind='text: HCS.DANGER_PANEL_HEADING'></div>
+                                <div class="panel-body">
+                                    Panel content
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -238,6 +238,9 @@ ul li{
 	color: #C1C1C1;
 	border-color: #fff;
 }
+.btn.mt-no-border, .btn.mt-no-border:active, .btn.mt-no-border:hover{
+	border: 0;
+}
 /* ********** BUTTON END ******************************************************** */
 
 
@@ -321,7 +324,7 @@ form.mt-form .form-group{
 .mt-tabs > .mt-tab{
 	border: 0;
 	border-bottom: 1px solid #ddd;
-	padding: 8px 15px;
+	padding: 10px 15px;
 	background-color: #fff;
 }
 .mt-tabs > .mt-tab:hover{
@@ -337,7 +340,7 @@ form.mt-form .form-group{
 }
 .mt-tab-bodys .mt-tab-body{
 	border: 1px solid #ddd;
-	margin-top: 6px;
+	margin-top: 8px;
 	padding: 15px;
 	display: none;
 }
@@ -346,11 +349,16 @@ form.mt-form .form-group{
 }
 
 .nav-tabs{
-	border-radius: 0 0 4px 4px;
+	border: 0;
 }
 .nav.nav-tabs + .mt-tab-bodys > .mt-tab-body{
-	margin-top: -1px;
+	margin-top: 0;
 	border-radius: 4px;
+}
+.nav.nav-pills + .mt-tab-bodys > .mt-tab-body,
+div + div > .mt-tab-bodys > .mt-tab-body{
+	margin-top: 0;
+	border: 0;
 }
 .nav.nav-tabs + .mt-tab-bodys > .mt-tab-body:first-child{
 	border-top-left-radius: 0;
@@ -360,3 +368,10 @@ form.mt-form .form-group{
 
 /* ********** PANEL BEGIN ******************************************************* */
 /* ********** PANEL END ********************************************************* */
+
+/* ********* TO TOP BEGIN ******************************************************* */
+.mt-to-top{
+	position: fixed;
+	bottom: 40px;
+}
+/* ********* TO TOP END ********************************************************* */

@@ -9,31 +9,33 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 
 	ko.components.register("mt-icon-btn", {
 		viewModel: function(params){
+			params = params ? params : {};
 			this.type = params.type ? params.type : 'btn-default';
 			this.icon = params.icon ? params.icon : '';
 			this.label = params.label ? params.label : '';
 			this.disabled = ( params.disabled === true || params.disabled === false) ? params.disabled : false;
-			this.href = params.href ? params.href : undefined;
+			this.href = (params.href || params.href === '') ? params.href : undefined;
 			this.clickEvent = params.clickEvent ? params.clickEvent : undefined;
-			if(this.clickEvent === undefined && this.href){
-				this.clickEvent = function(){
-					if(params.newpage || params.newpage === false){
-						window.location.href = this.href;
-					} else {
-						window.open(this.href);
-					}
-				}
-			}
+			this.newpage = (params.newpage === false) ? "" : "_blank";
 		},
 		template: 
-			"<button class='btn' data-bind='css: type, click: clickEvent, attr: {disabled: disabled}'>"
+			"<!-- ko if: href !== undefined -->"
+			+"<a class='btn' data-bind='css:type, attr: {disabled: disabled, href: href, target: newpage}, click: clickEvent'>"
+				+"<i data-bind='css: icon'></i> "
+				+"<span data-bind='text: label'></span>"
+			+"</a>"
+			+"<!-- /ko -->"
+			+"<!-- ko if: href === undefined -->"
+			+"<button class='btn' data-bind='css: type, click: clickEvent, attr: {disabled: disabled}'>"
 				+"<i data-bind='css: icon'></i> "
 				+"<span data-bind='text: label'></span>"
 			+"</button>"
+			+"<!-- /ko -->"
 	});
 
 	ko.components.register("mt-a", {
 		viewModel: function(params){
+			params = params ? params : {};
 			this.label = params.label ? params.label : "";
 			this.href = params.href ? params.href : "";
 			this.title = params.title ? params.title : "";
@@ -45,6 +47,7 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 
 	ko.components.register("mt-img", {
 		viewModel: function(params){
+			params = params ? params : {};
 			this.src = params.src ? params.src : "";
 			this.title = params.title ? params.title : "";
 			this.alt = params.alt ? params.alt : "";
@@ -57,6 +60,7 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 
 	ko.components.register("mt-table", {
 		viewModel: function(params){
+			params = params ? params : {};
 			this.data = params.data ? params.data : [];
 			this.columns = params.columns ? params.columns : [];
 			this.colNum = this.columns.length;
@@ -89,6 +93,7 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 	// support [type='text'] [type='email'] [type='password']
 	ko.components.register("mt-input", {
 		viewModel: function(params){
+			params = params ? params : {};
 			this.id = params.id ? params.id : "";
 			this.data = params.data ? params.data : undefined;
 			this.type = params.type ? params.type : "input";
@@ -111,6 +116,7 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 	// textarea
 	ko.components.register("mt-textarea", {
 		viewModel: function(params){
+			params = params ? params : {};
 			this.id = params.id ? params.id : "";
 			this.data = params.data ? params.data : undefined;
 			this.placeholder = params.placeholder ? params.placeholder : "";
@@ -133,6 +139,7 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 	// checkbox group & radio group
 	ko.components.register("mt-checkbox", {
 		viewModel: function(params){
+			params = params ? params : {};
 			this.prefix = params.prefix ? params.prefix : "";
 			this.data = params.data ? params.data : undefined;   // [{desc: 'Apple', value: appleSelected}, {desc: 'Banana', value: bananaSelected}]
 			for(var i=0; i<this.data.length; i++){
@@ -186,6 +193,7 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 	// select
 	ko.components.register('mt-select', {
 		viewModel: function(params){
+			params = params ? params : {};
 			this.id = params.id ? params.id : "";
 			this.data = params.data ? params.data : undefined;
 			this.options = params.options ? params.options : [];
@@ -209,9 +217,11 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 	ko.components.register("mt-tab", {
 		viewModel: function(params){
 			var self = this;
+			params = params ? params : {};
 			this.tabs = params.tabs ? params.tabs : [];
 			this.style = params.style ? params.style : "";
 			this.type = params.type ? params.type : "nav-tabs";  // 1. ""  2. tab  3. pill  4. jet
+			this.readyEvent = params.ready ? params.ready : undefined;
 			var allFalse = true;
 			for(var i=0; i<this.tabs.length; i++){
 				if(this.tabs[i].active === true ){
@@ -249,5 +259,40 @@ define(['jquery', 'knockout', 'milletHCS'], function($, ko, hcs){
 				+"<li role='presentation' data-bind='css: active() ? \"active\" : \"\" ' '><a data-bind='text: name, click: $parent.switchEvent, attr: {id: id, style: $parent.style}'></a></li>"
 			+"</ul>"
 			+"<!-- /ko -->"
+	});
+	
+	// it's not good to register a component for panel in such model.
+
+	ko.components.register("mt-to-top", {
+		viewModel: function(params){
+			var self = this;
+			params = params ? params : {};
+			this.icon = params.icon ? params.icon : "icon-chevron-up";
+			this.type = params.type ? params.type : "scroll";
+			this.style = ko.observable(params.style ? params.style : "");
+			this.label = params.label ? params.label : "";
+			this.css = params.css ? params.css : "btn-default";
+
+			var containerLeftCSS = $(".container").css('marginLeft');
+			var containerWidthCSS = $(".container").css('width');
+			var containerLeft = parseFloat(containerLeftCSS.substring(0, containerLeftCSS.length-2));
+			var containerWidth = parseFloat(containerWidthCSS.substring(0, containerWidthCSS.length-2));
+			var left = (containerLeft + containerWidth + 15) + "px";
+			this.style("left: "+ left +";"+ this.style());
+			window.onresize = function(){
+				containerLeftCSS = $(".container").css('marginLeft');
+				containerWidthCSS = $(".container").css('width');
+				containerLeft = parseFloat(containerLeftCSS.substring(0, containerLeftCSS.length-2));
+				containerWidth = parseFloat(containerWidthCSS.substring(0, containerWidthCSS.length-2));
+				left = (containerLeft + containerWidth + 15) + "px";
+				self.style(params.style ? params.style : "");
+				self.style("left: "+ left +";"+ self.style());
+			}
+		},
+		template: 
+			"<a class='btn mt-to-top' href='#' data-bind='css: css, attr: {style: style}'>"
+				+"<i data-bind='css: icon'></i> "
+				+"<span data-bind='text: label'></span>"
+			+"</a>"
 	});
 });

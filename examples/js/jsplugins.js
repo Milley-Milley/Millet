@@ -7,7 +7,7 @@ requirejs.config({
 		"bootstrap": "bootstrap/js/bootstrap", 
 		"knockout": "knockout/knockout",
 		"millet": "Millet/js/millet-base",
-		"milletHCS": "Millet/js/millet-hcs",
+		"HCS": "examples/js/hcs"
 	},
 	shim: {
 		"jqueryform": {
@@ -23,8 +23,9 @@ requirejs.config({
 });
 
 
-require(["jquery", "bootstrap", "knockout", "millet", "milletHCS"], function($, bs, ko, mt, hcs){
+require(["jquery", "bootstrap", "knockout", "millet", "HCS"], function($, bs, ko, mt, hcs){
 	var mainJS = function(){
+		var self = this;
 		this.HCS = hcs;
 		
 	};
